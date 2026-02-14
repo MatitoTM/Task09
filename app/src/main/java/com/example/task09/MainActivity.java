@@ -15,6 +15,8 @@ public class MainActivity extends AppCompatActivity {
 
     EditText eT;
     Button btn;
+    String etStr;
+    int etInt;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,6 +28,18 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void clicked(View view) {
+        etStr = eT.getText().toString();
+        etInt = Integer.parseInt(etStr);
 
+        if (etInt % 7 == 0)
+        {
+            btn.setText("BOOM!");
+            eT.setText("");
+        }
+        else
+        {
+            btn.setText(etStr);
+            eT.setText("");
+        }
     }
 }
